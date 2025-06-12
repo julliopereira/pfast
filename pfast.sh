@@ -11,7 +11,7 @@
 a1=$1
 a2=$2
 a3=$3
-mg="$(basename $0) arg1(IP) arg2(Repeat) arg3(FileName)"
+mg="try:\n\t$(basename $0) arg1(IP) arg2(Repeat) arg3(FileName)"
 dw=0
 lp=0
 
@@ -26,16 +26,16 @@ mon="mon"
 # - CHECK ARGUMENTS - 
 
 if [ -z "$a1" ]; then
-    echo "Argumentos 1, 2, 3 vazios"
-    echo $mg
+    echo -e "Args 1, 2, 3 empty!\n"
+    echo -e $mg
     exit 1
 elif [ -z "$a2" ]; then
-    echo "Argumentos 2, 3 vazios"
-    echo $mg
+    echo "Args 2, 3 empty!\n"
+    echo -e $mg
     exit 1
 elif [ -z "$a3" ]; then
-    echo "Argumento 3 vazio"
-    echo $mg
+    echo "Arg 3 empty!\n"
+    echo -e $mg
     exit 1
 fi
 
