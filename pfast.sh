@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 
-# AUTHOR: julio.pereira@ciriontechnologies.com
-# exemplo: bash pfast.sh <arg1> <arg2> <arg3>
+# AUTHOR: julio.pereira@gmail.com
+# example: bash pfast.sh <arg1> <arg2> <arg3>
 # arg1= ip(destination)
 # arg2= Repeat icmp echo request
 # arg3= file name
+
+export LC_NUMERIC=C
 
 # - VARIABLES DECLARATION -
 a1=$1
@@ -65,7 +67,7 @@ for ((i=1;i<$a2;i++));do
         if [[ $dw -eq 0 && $lp -gt 0 ]];then
 
             date_dw=$(date +%s%3N)
-            echo -e "$vm NO-PING $a1 at $(date +%Y-%m-%d-%H:%M:%S.%3N) DW $cl" >> $mon/${when}_${a3}_${a1}
+            echo -e "$vm PING $a1 at $(date +%Y-%m-%d-%H:%M:%S.%3N) DW $cl" >> $mon/${when}_${a3}_${a1}
             dw=1
             lp=0
 
@@ -84,7 +86,7 @@ for ((i=1;i<$a2;i++));do
 
         if [[ $comp = 1 ]];then
 
-                echo -e "$vd PING-OK $a1 at $(date +%Y-%m-%d-%H:%M:%S.%3N) [$diff_seg seg] UP $cl" >> $mon/${when}_${a3}_${a1}
+                echo -e "$vd PING $a1 at $(date +%Y-%m-%d-%H:%M:%S.%3N) UP [$diff_seg seg] $cl" >> $mon/${when}_${a3}_${a1}
 
         fi
 
