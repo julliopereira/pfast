@@ -24,7 +24,7 @@ vm="\033[31;1m"  # Vermelho (DOWN)
 vd="\033[32;1m"  # Verde (UP)
 cl="\033[m"      # Limpa
 
-when=$(date +%Ym%d)
+when=$(date +%Y%m%d)
 mon="mon"
 pid=$$
 
